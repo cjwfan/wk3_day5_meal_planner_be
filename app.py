@@ -7,14 +7,14 @@ CORS(app)
 
 @app.get("/")
 def home():
-    return{"message": "Meal planner API is running."}
+    return {"message": "Meal planner API is running."}
 
 @app.get("/api/meals")
 def get_meals():
     return planned_meals
 
 @app.post("/api/meals")
-def create_meals():
+def create_meal():
     data = request.get_json()
     if not data:
         return{"error": "Request body must be JSON"}, 400
